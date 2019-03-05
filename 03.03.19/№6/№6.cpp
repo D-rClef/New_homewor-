@@ -1,7 +1,9 @@
 #include <iostream>
 #include <stack>
 #include <string>
+
 using namespace std;
+
 bool Brackets(char opening, char closing)
 {
 	if (opening == '(' && closing == ')') return true;
@@ -9,9 +11,10 @@ bool Brackets(char opening, char closing)
 	else if (opening == '{' && closing == '}') return true;
 	return false;
 }
+
 bool BalancedParentheses(string b)
 {
-	stack<char> A;
+	stack <char> A;
 	for (int i = 0; i < b.length(); i++)
 	{
 		if (b[i] == '(' || b[i] == '{' || b[i] == '[')
@@ -22,11 +25,13 @@ bool BalancedParentheses(string b)
 				return false;
 			else
 				A.pop();
-		}
-	}
+		};
+	};
 	return A.empty();
 }
-int main()	{
+
+int main()
+{
 	string c;
 	cout << "Enter an expression: ";
 	cin >> c;

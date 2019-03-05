@@ -7,82 +7,119 @@ struct Node
 	int data;
 	Node* next = NULL;
 };
-class int_list {
+
+class int_list
+{
 	Node* head;
 public:
-	int_list() {
+	int_list()
+	{
 		this->head = NULL;
-	}
-	void push(int x) {
+	};
+
+	void push(int x)
+	{
 		Node* temp = new Node;
 		temp->data = x;
 		temp->next = head;
 		head = temp;
-	}
-	void showhead() {
+	};
+
+	void showhead()
+	{
 		cout << head->data;
-	}
-	void show_index(int j) {
+	};
+
+	void show_index(int j)
+	{
 		Node* temp = head;
 		int i = 0;
-		while (i != j) {
+		while (i != j)
+        {
 			temp = temp->next;
 			i++;
-		}
+		};
 		cout << temp->data << " ";
-	}
-	void show() {
+	};
+
+	void show()
+	{
 		Node* temp = head;
-		while (temp != NULL) {
+		while (temp != NULL)
+        {
 			cout << temp->data << " ";
 			temp = temp->next;
-		}
-	}
-	void push_index(int x, int j) {
+		};
+	};
+
+	void push_index(int x, int j)
+	{
 		int i = 0;
 		Node* temp = new Node;
 		tmp->data = x;
 		Node* temp = head;
-		while (i != j) {
+		while (i != j)
+        {
 			temp = temp->next;
 			i++;
-		}
+		};
 		temp->next = temp->next;
 		temp->next = temp;
-	}
-	void del(int j) {
+	};
+
+	void del(int j)
+	{
 		int i = 0;
 		Node* temp = head;
-		while (i != j) {
+		while (i != j)
+        {
 			temp = temp->next;
 			i++;
-		}
+		};
 		Node* temp = temp->next;
 		temp->next = temp->next->next;
 		delete tmp;
-	}
-	int operator[](int j) {
+	};
+
+	int operator[](int j)
+	{
 		int i = 0;
 		Node* temp = head;
-		while (i != j) {
+		while (i != j)
+		{
 			temp = temp->next;
 			i++;
-		}
+		};
 		return temp->data;
-	}
-	void operator=(int_list ar) {
-		Node* temp = ar.head;
+	};
 
-	}
-	~int_list() {
-		while (head != NULL) {
+	void operator=(int_list ar)
+	{
+		Node* temp = ar.head;
+	};
+
+	~int_list()
+	{
+		while (head != NULL)
+        {
 			Node* temp = head->next;
 			delete head;
 			head = temp;
-		}
-	}
+		};
+	};
 };
+
 int main()
 {
-	return 0;
+	int_list A;
+
+	A.push(101);
+	A.push(4);
+	A.push(2);
+	A.show();
+	A.showhead();
+	cout << A[1];
+	A.del(2);
+	A.push_index(3, 2);
+	int_list B = A;
 }
