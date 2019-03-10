@@ -6,7 +6,7 @@ class double_stack
 {
 	Node* head;
 public:
-	double_stack() :head(NULL) {}
+	double_stack():head(NULL){}
 
 	void push(double x)
 	{
@@ -16,7 +16,8 @@ public:
 		head = temp;
 	};
 
-	double pop() {
+	double pop()
+    {
 		if (head == NULL)
         {
 			cout << "Stack is empty";
@@ -31,8 +32,7 @@ public:
 
 	~double_stack()
 	{
-		while (head != NULL)
-        {
+		while (head != NULL){
 			Node* temp = head;
 			head = head->next;
 			delete temp;
@@ -43,7 +43,7 @@ public:
 int main()
 {
     double_stack A;
-    A.push(45);
-    A.push(9.54);
+    A.push(1.822);
+    A.push(1.984);
     cout << A.pop();
 }

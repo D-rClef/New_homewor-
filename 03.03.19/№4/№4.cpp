@@ -113,13 +113,12 @@ int main()
 {
 	int_list A;
 
-	A.push(101);
-	A.push(4);
-	A.push(2);
+	A.push(25);
+	A.push(125);
 	A.show();
 	A.showhead();
 	cout << A[1];
-	A.del(2);
-	A.push_index(3, 2);
+	A.del(1);
+	A.push_index(2, 625);
 	int_list B = A;
 }

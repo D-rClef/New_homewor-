@@ -87,13 +87,9 @@ public:
 int main()
 {
 	char_deque A;
-	A.push_front('9');
-	A.push_front('1');
-	cout << A.pop_front() << " ";
-	cout << A.pop_front() << " ";
-	A.push_back('4');
-	A.push_back('8');
-	cout << A.pop_back() << " ";
+	A.push_front('h');
+	cout << A.pop_front() << endl;
+	A.push_back('o');
 	cout << A.pop_back() << " ";
 	return 0;
 }
