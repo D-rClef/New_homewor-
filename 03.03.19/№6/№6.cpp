@@ -12,7 +12,7 @@ bool Brackets(char opening, char closing)
 	return false;
 }
 
-bool BalancedParentheses(string b)
+bool F(string b)
 {
 	stack <char> A;
 	for (int i = 0; i < b.length(); i++)
@@ -32,12 +32,9 @@ bool BalancedParentheses(string b)
 
 int main()
 {
-	string c;
-	cout << "Enter an expression: ";
-	cin >> c;
-	if (BalancedParentheses(c))
-		cout << "Balanced" << endl;
-	else
-		cout << "Not balanced." << endl;
+	string gumanitary;
+	cin >> gumanitary;
+	if (F(gumanitary)) {cout << "It's OK" << endl;}
+	else {cout << "Well, there is mistake" << endl;};
 	return 0;
 }

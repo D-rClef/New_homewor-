@@ -114,8 +114,8 @@ public:
 int main()
 {
     int_linked_list A;
-    A.push(5);
-    A.push_index(6, 2);
-    A[0] = 55;
+    A.push(33);
+    A.push_index(11, 2);
+    A[0] = 90;
     A.show();
 }

@@ -13,7 +13,7 @@ public:
 		if (s.empty())
 			{cout << "Stack is empty\n";}
 		else
-			{cout << "Maximum Element in the stack is: " << MAX << "\n";};
+			{cout << "Max element in the stack is: " << MAX << "\n";};
 	};
 
 	void pop()
@@ -23,7 +23,6 @@ public:
 			cout << "Stack is empty\n";
 			return;
 		};
-		cout << "Top Most Element Removed: ";
 		int t = s.top();
 		s.pop();
 		if (t > MAX)
@@ -41,7 +40,6 @@ public:
         {
 			MAX = x;
 			s.push(x);
-			cout << "Number Inserted: " << x << "\n";
 			return;
 		};
 		if (x > MAX)
@@ -52,7 +50,6 @@ public:
 		else
 		{
 		s.push(x);
-		cout << "Number Inserted: " << x << "\n";
 		};
 	};
 };
@@ -60,13 +57,10 @@ public:
 int main()
 {
 	stack_with_max A;
-	A.push(32);
-	A.push(809);
+	A.push(14);
+	A.push(88);
 	A.getMAX();
-	A.push(7);
-	A.push(1000);
-	A.getMAX();
+	A.push(0);
 	A.pop();
-	A.getMAX();
 	return 0;
 }
