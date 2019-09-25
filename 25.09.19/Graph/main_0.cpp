@@ -231,8 +231,75 @@ void l_edge_to_l_adj(list_edge A, list_adj &B)
 	};
 }
 
+void transform_ (matrix_adj &A, list_edge &B, list_adj &C)
+{
+    int t, k;
+    cout << "What have you got?" << endl;
+    cout << "1) Matrix of adjacency" << endl;
+    cout << "2) List of edges" << endl << "3) List of adjacency" << endl;
+    cin >> t;
+    switch (t)
+    {
+    case 1:
+            A.input_();
+            cout << "What do you want to have?" << endl;
+            cout << "1) List of edgeû" << endl;
+            cout << "2) List of adjacency" << endl;
+            cin >> k;
+            switch (k)
+            {
+            case 1:
+                m_adj_to_l_edge(A, B);
+                cout << endl;
+                B.output_();
+            case 2:
+                m_adj_to_l_adj(A, C);
+                cout << endl;
+                C.output_();
+            }
+    case 2:
+        B.input_();
+        cout << "What do you want to have?" << endl;
+        cout << "1) Matrix of adjacency" << endl;
+        cout << "2) List of adjacency" << endl;
+        cin >> k;
+        switch (k)
+        {
+        case 1:
+            l_edge_to_m_adj(B, A);
+            cout << endl;
+            A.output_();
+        case 2:
+            l_edge_to_l_adj(B, C);
+            cout << endl;
+            C.output_();
+        }
+    case 3:
+        C.input_();
+        cout << "What do you want to have?" << endl;
+        cout << "1) List of edge" << endl;
+        cout << "2) Matrix of adjacency" << endl;
+        cin >> k;
+        switch (k)
+        {
+        case 1:
+            l_adj_to_l_edge(C, B);
+            cout << endl;
+            B.output_();
+        case 2:
+            l_adj_to_m_adj(C, A);
+            cout << endl;
+            A.output_();
+        }
+    };
+
+}
+
 int main()
 {
-
+    matrix_adj A;
+    list_edge B;
+    list_adj C;
+    transform_(A, B, C);
 	return 0;
 }
