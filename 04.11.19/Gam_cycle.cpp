@@ -13,28 +13,23 @@ class matrix_adj
 	{
 	    cout << "Enter number of vertex (vershin) in graph" << endl;
 		cin >> vertex;
+
 		matrix = new bool *[vertex];
 		for (int i = 0; i < vertex; i++)
-		{
 			matrix[i] = new bool[vertex];
-		};
+
 		cout << "Well, now enter the matrix of adjacency (smejnosty) of your graph" << endl;
 		for (int i = 0; i < vertex; i++)
-		{
 			for (int j = 0; j < vertex; j++)
-			{
 				cin >> matrix[i][j];
-			};
-		};
 	}
 
 	void output_()
 	{
 		cout << "   ";
 		for (int i = 0; i < vertex; i++)
-		{
 			cout << i << "  ";
-		};
+
 		cout << endl << endl;
 		for (int i = 0; i < vertex; i++)
 		{
@@ -44,11 +39,11 @@ class matrix_adj
 				{
 					cout << i << "  ";
 					continue;
-				};
+				}
 				cout << matrix[i][j] << "  ";
-			};
+			}
 			cout << endl;
-		};
+		}
 	}
 };
 
@@ -68,7 +63,7 @@ void i_find_you (matrix_adj A, deque <int> &B)
                 i++;
             for (int j = 0; ((2*j) <= (i - 2)); j++)
                 swap(B.at(1 + j), B.at(i - j));
-        };
+        }
         B.push_back(B.front());
         B.pop_front();
     }
@@ -84,9 +79,11 @@ int main()
 
     cout << endl << "This is your matrix" << endl;
     A.output_();
+
     cout << endl << "This is hamiltonian cycle in your graph:" << endl;
     for(int o = 0; o < A.vertex; o++)
         cout << B.at(o) << " ";
     cout << B.front();
+
     return 0;
 }
