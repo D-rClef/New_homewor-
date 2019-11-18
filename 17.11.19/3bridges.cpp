@@ -1,3 +1,4 @@
+//Найти все вершины, из которых выходят три моста
 #include <iostream>;
 #include <vector>
 #include <cmath>
